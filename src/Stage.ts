@@ -1,6 +1,6 @@
 import {Pane} from './Pane'
 
-class Stage{
+export class Stage{
     Children: Pane[]
     constructor(){}
     getChildren(): Pane[] {

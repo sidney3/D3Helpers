@@ -1,6 +1,6 @@
 import {VisualObject} from './VisualObject'
 
-export class Shape ext{
+export class Shape extends VisualObject{
     /*
     All shapes will extend this class
 
