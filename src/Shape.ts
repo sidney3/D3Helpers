@@ -8,4 +8,5 @@ export class Shape extends VisualObject{
         throw an X over a square and call it a single type)
     */
 
+
 }

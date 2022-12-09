@@ -11,5 +11,8 @@ export class Pane{
         return this.Children
     }
 
+    render(){
+        //for child: tell that child to render itself
+    }
 
 }
