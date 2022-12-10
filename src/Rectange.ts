@@ -1,5 +1,6 @@
 import {Shape} from './Shape'
 import d3 from 'd3'
+import {Coords} from './VisualObject'
 
 export class Rectangle extends Shape{
     height: number;
@@ -12,12 +13,11 @@ export class Rectangle extends Shape{
     */
 
     constructor(
-        x: number,
-        y: number,
+        coords: Coords,
         height: number,
         width: number
     ){
-        super(x, y)
+        super(coords)
         this.height = height
         this.width = width
     }

@@ -1,4 +1,4 @@
-import {VisualObject} from './VisualObject'
+import {VisualObject, Coords} from './VisualObject'
 import {DEFAULT_BORDER_COLOR, DEFAULT_COLOR, DEFAULT_STROKE_WIDTH} from './Constants'
 
 export class Shape extends VisualObject{
@@ -13,10 +13,9 @@ export class Shape extends VisualObject{
     */
 
     constructor(
-        x: number,
-        y: number
+        coords: Coords
     ){
-        super(x, y)
+        super(coords)
         this.color = DEFAULT_BORDER_COLOR; 
         this.borderWidth = DEFAULT_STROKE_WIDTH;
         this.borderColor = DEFAULT_COLOR;
