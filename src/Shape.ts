@@ -3,7 +3,7 @@ import {DEFAULT_BORDER_COLOR, DEFAULT_COLOR, DEFAULT_STROKE_WIDTH} from './Const
 
 export class Shape extends VisualObject{
     public color: string;
-    public strokeWidth: number;
+    public borderWidth: number;
     public borderColor: string;
     /*
     All shapes will extend this class
@@ -18,11 +18,11 @@ export class Shape extends VisualObject{
     ){
         super(x, y)
         this.color = DEFAULT_BORDER_COLOR; 
-        this.strokeWidth = DEFAULT_STROKE_WIDTH;
+        this.borderWidth = DEFAULT_STROKE_WIDTH;
         this.borderColor = DEFAULT_COLOR;
     }
 
     setColor(color: string){ this.color = color }
-    setStrokeWidth(strokeWidth: number){ this.strokeWidth = strokeWidth }
+    setStrokeWidth(borderWidth: number){ this.borderWidth = borderWidth }
     setBorderColor(borderColor: string){ this.borderColor = borderColor }
 }
