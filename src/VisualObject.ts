@@ -5,6 +5,10 @@ export class VisualObject{
     //iterates through each of the panes, asking each pane to render all of its children (which the pane does
     //by calling this method)
 
+    constructor(x: number, y: number){}
+
+    boundingBox(){}
+
     //question: what actually makes up an object? Is every object a collection of shapes? What about text
     render(){}
 }
