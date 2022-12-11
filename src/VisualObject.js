@@ -6,9 +6,13 @@ var VisualObject = /** @class */ (function () {
     //iterates through each of the panes, asking each pane to render all of its children (which the pane does
     //by calling this method)
     function VisualObject(coords) {
+        this.coords = coords;
         this.children = [];
     }
     VisualObject.prototype.boundingBox = function () { };
+    VisualObject.prototype.center = function () {
+        return this.coords;
+    };
     //question: what actually makes up an object? Is every object a collection of shapes? What about text
     VisualObject.prototype.render = function (svg) {
         this.children.forEach(function (child) { return child.render(svg); });

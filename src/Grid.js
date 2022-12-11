@@ -7,21 +7,35 @@ var Grid = /** @class */ (function () {
         this.initialize_cells();
     }
     Grid.prototype.initialize_cells = function () {
-        console.log("this happened");
         this.cells = [];
-        for (var r = 0; r < this.config.grid_dimensions.height; r++) {
-            console.log("row =" + r);
+        for (var w = 0; w < this.config.grid_dimensions.width; w++) {
             this.cells.push([]);
-            for (var w = 0; w < this.config.grid_dimensions.width; w++) {
-                console.log("width =" + w);
+            for (var r = 0; r < this.config.grid_dimensions.height; r++) {
                 var empty_cell = {
                     full: false,
-                    text: "hi"
+                    center: {
+                        x: this.config.coords.x + this.config.cell_size.x_size * w +
+                            +this.config.cell_size.x_size / 2,
+                        y: this.config.coords.y + this.config.cell_size.y_size * r +
+                            +this.config.cell_size.y_size / 2
+                    }
                 };
-                this.cells[r].push(empty_cell);
+                console.log("w: " + w + ",r: " + r + "\n x center: " + empty_cell.center.x + " y center: " + empty_cell.center.y);
+                this.cells[w].push(empty_cell);
             }
         }
-        console.log(this.cells);
+    };
+    Grid.prototype.fill_cell = function (x_coord, y_coord, add_object) {
+        if (!Number.isInteger(x_coord) || Number.isInteger(y_coord)) {
+            throw "non-integer indices given for grid coords";
+        }
+        if (x_coord < 0 || y_coord < 0) {
+            throw "negative indices given for grid coords";
+        }
+        if (x_coord > this.config.cell_size.x_size - 1 || y_coord > this.config.cell_size.y_size - 1) {
+            throw "coordinates out of bounds. Grid is of width ".concat(this.config.cell_size.x_size, " and height ").concat(this.config.cell_size.y_size);
+        }
+        //check for inside bounding box
     };
     return Grid;
 }());
