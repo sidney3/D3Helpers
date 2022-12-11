@@ -23,6 +23,10 @@ export class VisualObject{
         return this.coords
     }
 
+    setCenter(center: Coords){
+        this.coords = center
+    }
+
     //question: what actually makes up an object? Is every object a collection of shapes? What about text
     render(svg){
         this.children.forEach((child: VisualObject) => child.render(svg))

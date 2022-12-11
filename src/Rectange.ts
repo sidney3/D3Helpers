@@ -26,6 +26,13 @@ export class Rectangle extends Shape{
         return {x: this.coords.x + this.width/2, y: this.coords.y + this.height/2}
     }
 
+    setCenter(center: Coords){
+        this.coords = {
+            x: center.x - this.width/2,
+            y: center.y - this.height/2
+        }
+    }
+
     render(svg){
         super.render(svg)
         d3.select(svg)
