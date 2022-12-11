@@ -4,7 +4,8 @@ export interface Coords{
 }
 
 export class VisualObject{
-    coords:Coords
+
+    coords: Coords
     children: VisualObject[]
 
     //idea: give each object the functionality to render themselves. When one calls "render" on the stage it
@@ -12,10 +13,15 @@ export class VisualObject{
     //by calling this method)
 
     constructor(coords: Coords){
+        this.coords = coords
         this.children = []
     }
 
     boundingBox(){}
+
+    center(): Coords{
+        return this.coords
+    }
 
     //question: what actually makes up an object? Is every object a collection of shapes? What about text
     render(svg){

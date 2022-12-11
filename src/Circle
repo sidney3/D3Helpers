@@ -1,5 +1,6 @@
 import {Shape} from './Shape'
 import d3 from 'd3'
+import { Coords } from './VisualObject';
 
 export class Circle extends Shape{
     radius: number;
@@ -11,11 +12,10 @@ export class Circle extends Shape{
     */
 
     constructor(
-        x: number,
-        y: number,
+        coords: Coords,
         radius: number,
     ){
-        super(x, y)
+        super(coords)
         this.radius = radius
     }
 
@@ -23,8 +23,8 @@ export class Circle extends Shape{
         super.render(svg)
         d3.select(svg)
             .append('circ')
-            .attr('cx', this.x)
-            .attr('cy', this.y)
+            .attr('cx', this.coords.y)
+            .attr('cy', this.coords.x)
             .attr('stroke-width', this.borderWidth)
             .attr('stroke', this.borderColor)
             .attr('fill', this.color)

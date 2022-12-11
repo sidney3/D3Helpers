@@ -22,12 +22,16 @@ export class Rectangle extends Shape{
         this.width = width
     }
 
+    center(): Coords{
+        return {x: this.coords.x + this.width/2, y: this.coords.y + this.height/2}
+    }
+
     render(svg){
         super.render(svg)
         d3.select(svg)
             .append('rect')
-            .attr('x', this.x)
-            .attr('y', this.y)
+            .attr('x', this.coords.y)
+            .attr('y', this.coords.x)
             .attr('width', this.width)
             .attr('height', this.height)
             .attr('stroke-width', this.borderWidth)
